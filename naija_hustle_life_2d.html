@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#102a24">
+<title>Naija Hustle Life</title>
+<style>
+:root{--green:#123d32;--lime:#d5f36a;--cream:#fff8e9;--ink:#18221e;--muted:#66736b;--orange:#ffb45c}
+*{box-sizing:border-box}body{margin:0;background:#f1eee4;color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.app{max-width:560px;margin:0 auto;min-height:100dvh;background:var(--cream);padding-bottom:24px}
+header{background:var(--green);color:white;padding:20px 18px 16px;border-radius:0 0 22px 22px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--lime);font-weight:800}.brand{font-size:25px;font-weight:900;line-height:1.1;margin-top:4px}.day{background:#ffffff1a;border:1px solid #ffffff35;border-radius:12px;padding:9px 11px;font-size:12px;white-space:nowrap}
+.scene{position:relative;overflow:hidden;margin:14px 14px 0;border-radius:18px;height:190px;background:linear-gradient(#a8dbe0 0 55%,#e8c88d 55% 70%,#565b54 70%);border:2px solid #193d32}
+.sun{position:absolute;right:28px;top:17px;width:34px;height:34px;background:#ffe07a;border-radius:50%}
+.building{position:absolute;bottom:57px;background:#f1a45e;border:3px solid #4d5146}.b1{left:12px;width:57px;height:83px}.b2{left:75px;width:64px;height:110px;background:#e7d8a5}.b3{right:9px;width:66px;height:100px;background:#db7c5a}.win{height:13px;width:12px;background:#6d9eaa;display:inline-block;margin:7px 3px 0;border:1px solid #394a47}
+.bus{position:absolute;bottom:25px;left:36%;width:150px;height:59px;background:#f6c629;border:3px solid #253d32;border-radius:12px 17px 7px 7px;box-shadow:inset 0 -10px #e79d22}
+.bus:before{content:"LAGOS";position:absolute;top:7px;left:10px;font-size:10px;font-weight:1000;color:#17392f}.windshield{position:absolute;right:8px;top:7px;width:48px;height:23px;background:#9bd0d7;border:2px solid #253d32;border-radius:5px}
+.wheel{position:absolute;bottom:-9px;width:23px;height:23px;background:#242b28;border:4px solid #a8aaa0;border-radius:50%}.w1{left:18px}.w2{right:20px}
+.person{position:absolute;bottom:27px;left:17%;width:27px;height:54px}.head{position:absolute;top:0;left:5px;width:18px;height:18px;border-radius:50%;background:#804c30;border:2px solid #2b342c}.body{position:absolute;top:16px;left:2px;width:23px;height:25px;border-radius:7px;background:#d95c4f;border:2px solid #2b342c}.legs{position:absolute;top:39px;left:5px;width:7px;height:16px;background:#263e37;box-shadow:11px 0 #263e37}
+.scene-label{position:absolute;left:10px;top:10px;background:#fff8e9dd;padding:5px 8px;border-radius:7px;font-size:10px;font-weight:900;letter-spacing:.5px}
+main{padding:14px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat{background:white;border:1px solid #e6e0d2;border-radius:13px;padding:12px 10px}.stat small{display:block;color:var(--muted);font-size:11px;font-weight:700}.stat strong{display:block;font-size:20px;margin-top:3px}.stat.cash strong{color:#168052}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin:20px 2px 10px}.section-head h2{font-size:18px;margin:0}.section-head span{font-size:11px;color:var(--muted)}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}.action{border:1px solid #e2dccd;border-radius:15px;background:white;padding:13px;text-align:left;color:var(--ink);min-height:105px;cursor:pointer;font:inherit;transition:transform .1s}.action:active{transform:scale(.98)}.action .emoji{font-size:23px;display:block;margin-bottom:5px}.action b{display:block;font-size:14px}.action small{display:block;color:var(--muted);font-size:11px;margin-top:3px;line-height:1.35}.action.primary{background:var(--lime);border-color:#c0dc5d}.action:disabled{opacity:.45;cursor:not-allowed}
+.message{margin-top:14px;background:#edf4e8;border:1px solid #d5e6cb;border-radius:14px;padding:12px 13px}.message b{font-size:12px}.message p{margin:4px 0 0;font-size:13px;line-height:1.45}
+.feed{margin-top:14px;background:white;border:1px solid #e6e0d2;border-radius:14px;padding:13px}.feed h3{font-size:13px;margin:0 0 8px}.feed ul{list-style:none;padding:0;margin:0}.feed li{font-size:12px;padding:7px 0;border-top:1px solid #f0ece4;line-height:1.4}.feed li:first-child{border-top:0}.footer{display:flex;gap:8px;margin-top:14px}.footer button{flex:1;border:1px solid #d9d2c2;background:transparent;border-radius:10px;padding:10px;font-weight:800;color:#49574e;font-size:12px;cursor:pointer}
+.overlay{position:fixed;inset:0;background:#0d1f1bd9;display:none;align-items:center;justify-content:center;padding:24px;z-index:3}.overlay.show{display:flex}.modal{background:var(--cream);max-width:340px;width:100%;padding:24px;border-radius:20px;text-align:center}.modal .trophy{font-size:42px}.modal h2{margin:8px 0}.modal p{font-size:14px;line-height:1.5}.modal button{border:0;background:var(--green);color:white;border-radius:12px;padding:12px 18px;font-weight:800}
+@media(min-width:560px){body{padding:18px 0}.app{border-radius:24px;overflow:hidden;box-shadow:0 15px 55px #102a241c}.scene{height:210px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="top"><div><div class="eyebrow">YOUR STORY STARTS HERE</div><div class="brand">Naija Hustle Life 🇳🇬</div></div><div class="day" id="day">DAY 1 · MON</div></div></header>
+<div class="scene" aria-label="Illustrated Lagos street"><div class="sun"></div><div class="building b1"><i class="win"></i><i class="win"></i><i class="win"></i><i class="win"></i></div><div class="building b2"><i class="win"></i><i class="win"></i><i class="win"></i><i class="win"></i><i class="win"></i><i class="win"></i></div><div class="building b3"><i class="win"></i><i class="win"></i><i class="win"></i><i class="win"></i></div><div class="scene-label">LAGOS, NIGERIA</div><div class="person"><div class="head"></div><div class="body"></div><div class="legs"></div></div><div class="bus"><div class="windshield"></div><div class="wheel w1"></div><div class="wheel w2"></div></div></div>
+<main>
+<div class="stats"><div class="stat cash"><small>💵 CASH</small><strong id="cash">₦5,000</strong></div><div class="stat"><small>⚡ ENERGY</small><strong id="energy">100/100</strong></div><div class="stat"><small>⭐ REP</small><strong id="rep">0</strong></div></div>
+<div class="section-head"><h2>What will you do?</h2><span id="goal">Goal: save ₦20,000</span></div>
+<div class="actions">
+<button class="action primary" id="job"><span class="emoji">🧰</span><b>Go to work</b><small>Earn ₦2,500 · Uses 20 energy</small></button>
+<button class="action" id="hustle"><span class="emoji">🛍️</span><b>Quick hustle</b><small>Earn ₦800–₦3,000 · Uses 15 energy</small></button>
+<button class="action" id="rest"><span class="emoji">🛌</span><b>Rest at home</b><small>Restore 35 energy</small></button>
+<button class="action" id="rent"><span class="emoji">🏠</span><b>Pay rent</b><small>Pay ₦3,000 · Build your stability</small></button>
+<button class="action" id="fashion"><span class="emoji">👟</span><b>Buy fashion drip</b><small>Pay ₦1,500 · Gain 3 reputation</small></button>
+<button class="action" id="end"><span class="emoji">🌇</span><b>End the day</b><small>Move to tomorrow and recover energy</small></button>
+</div>
+<div class="message"><b>📣 STREET TALK</b><p id="message">New day, fresh opportunities. Make smart moves and build your future!</p></div>
+<div class="feed"><h3>📒 Your hustle diary</h3><ul id="feed"><li>You arrived in Lagos with ₦5,000 in your pocket.</li></ul></div>
+<div class="footer"><button id="save">Save game</button><button id="restart">Restart story</button></div>
+</main></div>
+<div class="overlay" id="overlay"><div class="modal"><div class="trophy">🏆</div><h2>You made it!</h2><p id="winText">You reached your savings goal.</p><button id="closeWin">Keep playing</button></div></div>
+<script>
+const initial={cash:5000,energy:100,rep:0,day:1,rentPaid:false,feed:["You arrived in Lagos with ₦5,000 in your pocket."]};
+let state;
+try{state=JSON.parse(localStorage.getItem("naijaHustleSave"))||structuredClone(initial)}catch(e){state={...initial,feed:[...initial.feed]}}
+const money=n=>"₦"+Math.floor(n).toLocaleString("en-NG");
+const $=id=>document.getElementById(id);
+function log(text){state.feed.unshift(text);state.feed=state.feed.slice(0,6)}
+function say(text){$("message").textContent=text}
+function render(){
+$("cash").textContent=money(state.cash);$("energy").textContent=state.energy+"/100";$("rep").textContent=state.rep;
+$("day").textContent="DAY "+state.day+" · "+["MON","TUE","WED","THU","FRI","SAT","SUN"][(state.day-1)%7];
+$("feed").innerHTML=state.feed.map(x=>"<li>"+escapeHTML(x)+"</li>").join("");
+$("job").disabled=state.energy<20;$("hustle").disabled=state.energy<15;
+$("rent").disabled=state.rentPaid;$("rent").querySelector("small").textContent=state.rentPaid?"Rent paid for this month ✓":"Pay ₦3,000 · Build your stability";
+if(state.cash>=20000){$("overlay").classList.add("show");$("winText").textContent="You saved "+money(state.cash)+". Keep growing your life in Lagos!"}
+}
+function escapeHTML(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function save(){try{localStorage.setItem("naijaHustleSave",JSON.stringify(state));say("Game saved on this device. Come back on this browser to continue.")}catch(e){say("This browser could not save automatically. Keep this tab open while playing.")}}
+function act(cost,fn){if(state.energy<cost){say("You’re low on energy. Rest or end the day before taking another job.");return}state.energy-=cost;fn();render();save()}
+$("job").onclick=()=>act(20,()=>{state.cash+=2500;state.rep+=1;log("You completed a day job and earned ₦2,500.");say("Nice one! Steady work is building your future.")});
+$("hustle").onclick=()=>act(15,()=>{let earned=800+Math.floor(Math.random()*2201);state.cash+=earned;state.rep+=Math.random()>.55?1:0;log("You did a quick hustle and made "+money(earned)+".");say(earned>2200?"Big win! Your quick hustle paid off.":"Every naira counts. Keep your eyes open for the next opportunity.")});
+$("rest").onclick=()=>{let before=state.energy;state.energy=Math.min(100,state.energy+35);log("You rested and restored "+(state.energy-before)+" energy.");say("No shame in resting. You need energy to keep moving.");render();save()};
+$("rent").onclick=()=>{if(state.rentPaid){say("You’ve already paid rent for this month.");return}if(state.cash<3000){say("You need ₦3,000 to pay rent. Work or hustle first.");return}state.cash-=3000;state.rentPaid=true;state.rep+=2;log("You paid ₦3,000 rent. One less thing to worry about.");say("Rent paid! You’re taking responsibility for your life.");render();save()};
+$("fashion").onclick=()=>{if(state.cash<1500){say("You need ₦1,500 for that drip. Make some money first.");return}state.cash-=1500;state.rep+=3;log("You bought a fresh outfit for ₦1,500 and gained 3 reputation.");say("Fresh look unlocked. Confidence is part of the journey too.");render();save()};
+$("end").onclick=()=>{state.day++;state.energy=Math.min(100,state.energy+50);if((state.day-1)%7===0){state.rentPaid=false;log("A new week begins. Rent is due again when you’re ready.")}log("You ended the day. A new morning has arrived.");say("New day, new chances. What’s your next move?");render();save()};
+$("save").onclick=save;
+$("restart").onclick=()=>{if(confirm("Start over? Your current game progress will be erased.")){state={...initial,feed:[...initial.feed]};save();say("A fresh start in Lagos. Make your next move count.");render()}};
+$("closeWin").onclick=()=>$("overlay").classList.remove("show");
+render();
+</script>
+</body>
+</html>
